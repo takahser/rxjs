@@ -91,7 +91,7 @@ export class WebSocketSubject<T> extends AnonymousSubject<T> {
         }
       }
 
-      if (!config.WebSocketCtor && WebSocket) {
+      if (!config.WebSocketCtor && typeof WebSocket !== 'undefined') {
         config.WebSocketCtor = WebSocket;
       } else if (!config.WebSocketCtor) {
         throw new Error('no WebSocket constructor can be found');
